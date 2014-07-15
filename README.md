@@ -1,11 +1,9 @@
 # LEADS prototype #
 
-This prototypes the use of Client Listeners to process events in the Infinispan nodes and send back to the coordinator 
-only the data needed.
+This prototypes uses Client Listeners to process events in the Infinispan nodes and sends back to the coordinator 
+small pieces of data needed.
 
 ## Requirements ##
-
-This prototype was tested with
 
 * Java 7 
 * Maven 3
@@ -13,7 +11,7 @@ This prototype was tested with
 
 ## How to compile it? ##
 
-First you need to download and compile the most recent version of Infinispan
+First you need to download and compile the most recent version of Infinispan:
 
 `git clone https://github.com/infinispan/infinispan.git`
 
@@ -21,7 +19,7 @@ First you need to download and compile the most recent version of Infinispan
 
 `mvn clean install -DskipTests`
 
-Second, you need to download the prototype code
+Second, you need to download and compile the prototype code:
 
 `git clone https://github.com/pruivo/leads-prototype.git`
 
@@ -31,10 +29,11 @@ Second, you need to download the prototype code
 
 ## How to run it? ##
  
-Note: All the scripts prints a help message with the argument `--help`
-Note:The default values are suitable to try it locally.
+*Note:* All the scripts prints a help message with the argument `--help`
 
-NOTE: Execute the following commands in a separate terminal/shell:
+*Note:* The default values are suitable to try it locally.
+
+Execute the following commands in a separate terminal/shell:
 
 * Start the server
 
