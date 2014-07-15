@@ -16,13 +16,17 @@ This prototype was tested with
 First you need to download and compile the most recent version of Infinispan
 
 `git clone https://github.com/infinispan/infinispan.git`
+
 `cd infinispan`
+
 `mvn clean install -DskipTests`
 
 Second, you need to download the prototype code
 
-`git clone <update the link>`
-`cd <folder>`
+`git clone https://github.com/pruivo/leads-prototype.git`
+
+`cd leads-prototype`
+
 `mvn clean package`
 
 ## How to run it? ##
