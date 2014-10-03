@@ -1,8 +1,9 @@
 package org.jboss.pruivo.leads.notification;
 
 import org.infinispan.filter.KeyValueFilter;
+import org.infinispan.filter.KeyValueFilterFactory;
+import org.infinispan.filter.NamedFactory;
 import org.infinispan.manager.EmbeddedCacheManager;
-import org.infinispan.server.hotrod.event.KeyValueFilterFactory;
 
 /**
  * Constructs a {@link org.infinispan.filter.KeyValueFilter}.
@@ -10,6 +11,7 @@ import org.infinispan.server.hotrod.event.KeyValueFilterFactory;
  * @author Pedro Ruivo
  * @since 1.0
  */
+@NamedFactory(name = "leads-filter-factory")
 public class LeadsKeyValueFilterFactory implements KeyValueFilterFactory {
 
     private final EmbeddedCacheManager cacheManager;

@@ -7,19 +7,8 @@ small pieces of data needed.
 
 * Java 7 
 * Maven 3
-* Infinispan 7.0 snapshot
 
 ## How to compile it? ##
-
-First you need to download and compile the most recent version of Infinispan:
-
-`git clone https://github.com/infinispan/infinispan.git`
-
-`cd infinispan`
-
-`mvn clean install -DskipTests`
-
-Second, you need to download and compile the prototype code:
 
 `git clone https://github.com/pruivo/leads-prototype.git`
 

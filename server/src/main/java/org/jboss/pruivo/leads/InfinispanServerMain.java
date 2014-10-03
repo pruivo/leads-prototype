@@ -45,8 +45,6 @@ public class InfinispanServerMain {
         builder.dataContainer()
                 .keyEquivalence(ByteArrayEquivalence.INSTANCE)
                 .valueEquivalence(ByteArrayEquivalence.INSTANCE);
-        //disabled because ISPN-4474
-        builder.compatibility().disable();
 
         builder = holder.getNamedConfigurationBuilders().get(configuration.get(Argument.LISTENER_CACHE_NAME));
         if (builder == null) {
@@ -59,11 +57,11 @@ public class InfinispanServerMain {
         HotRodServerConfigurationBuilder serverConfigurationBuilder = new HotRodServerConfigurationBuilder();
         serverConfigurationBuilder
                 .host(configuration.get(Argument.HOST))
-                .port(configuration.getAsInt(Argument.PORT))
-                .converterFactory("leads-converter-factory", new LeadsConverterFactory())
-                .keyValueFilterFactory("leads-filter-factory", new LeadsKeyValueFilterFactory(cacheManager));
+                .port(configuration.getAsInt(Argument.PORT));
         HotRodServer server = new HotRodServer();
         server.start(serverConfigurationBuilder.build(), cacheManager);
+        server.addConverterFactory("leads-converter-factory", new LeadsConverterFactory());
+        server.addKeyValueFilterFactory("leads-filter-factory", new LeadsKeyValueFilterFactory(cacheManager));
 
         System.out.println("Server started! Press <enter> to exit!");
         System.console().readLine();

@@ -1,8 +1,9 @@
 package org.jboss.pruivo.leads.notification;
 
 import org.infinispan.filter.Converter;
+import org.infinispan.filter.ConverterFactory;
+import org.infinispan.filter.NamedFactory;
 import org.infinispan.metadata.Metadata;
-import org.infinispan.server.hotrod.event.ConverterFactory;
 
 /**
  * Constructs the {@link org.infinispan.filter.Converter}.
@@ -10,6 +11,7 @@ import org.infinispan.server.hotrod.event.ConverterFactory;
  * @author Pedro Ruivo
  * @since 1.0
  */
+@NamedFactory(name = "leads-converter-factory")
 public class LeadsConverterFactory implements ConverterFactory {
 
     @SuppressWarnings("unchecked")
